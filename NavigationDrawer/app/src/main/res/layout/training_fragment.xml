@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TrainingFragment">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+                android:layout_width="324dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="トレーニングの内容を記入する" android:layout_marginBottom="10dp"
+
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                 android:layout_marginTop="8dp"
+                />
+        <TextView
+                android:text="日付を選択してください"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" android:id="@+id/textView4" android:textSize="16sp"
+                android:paddingTop="10dp" android:layout_marginTop="10dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/dateSelected" android:textSize="18sp"
+                android:text="@string/no_data"
+                android:onClick="showDatePickerDialog"
+                android:contextClickable="false"/>
+        <Button android:layout_width="100dp" android:layout_height="40dp"
+                android:onClick="showDatePickerDialog"
+                android:text="@string/pick_date"/>
+        <TextView
+                android:text="トレーニング種目"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView5" android:layout_marginTop="20dp"
+                android:textSize="18sp"/>
+        <Spinner
+                android:layout_height="wrap_content" android:id="@+id/TraningSelected"
+                android:spinnerMode="dropdown"
+                android:dropDownWidth="wrap_content" android:entries="@array/traningEventItems"
+                android:layout_width="200dp"/>
+        <TextView
+                android:text="重量"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_marginTop="20dp"
+                android:textSize="18sp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/UseWeight" android:textSize="18sp" android:inputType="text"
+                android:hint="重量を記入してください"/>
+        <TextView
+                android:text="回数"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_marginTop="20dp"
+                android:textSize="18sp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/UseRep" android:textSize="18sp" android:hint="回数を記入してください"/>
+        <Button
+                android:text="記録を更新する"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/InputCompButton" android:textSize="18sp"
+                android:paddingTop="20dp" android:paddingBottom="20dp"
+                tools:layout_editor_absoluteX="0dp"
+                android:layout_marginTop="100dp"
+        />
+    </LinearLayout>
+
+</FrameLayout>
