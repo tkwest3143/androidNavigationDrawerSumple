@@ -45,6 +45,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
     }
 
+    //ユーザーリストの取得と画面への反映
+    private fun getUserlist(userlist:Menu){
+        userlist.add(0,0,0,"ユーザー１")
+        menuInflater.inflate(R.menu.userlist,userlist)
+    }
+
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -78,19 +84,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragment=HomeFragment()
             }
             R.id.nav_help-> {
-
+                fragment=HelpFragment()
             }
             R.id.nav_training -> {
                 // Handle the training action
                 fragment=TrainingFragment()
             }
             R.id.nav_schedule -> {
-
+                fragment=ScheduleFragment()
             }
             R.id.nav_share -> {
 
             }
-            R.id.nav_help-> {
+            R.id.nav_meal-> {
+                fragment=MealFragment()
 
             }
         }
