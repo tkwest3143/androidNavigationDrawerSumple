@@ -34,8 +34,9 @@ class SelectUserFragment : Fragment() {
 
     //ユーザーリストの取得と画面への反映
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        menu?.add(0,0,0,"ユーザー１")
+        menu?.clear()
         inflater?.inflate(R.menu.userlist,menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
