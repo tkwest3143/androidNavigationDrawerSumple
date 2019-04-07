@@ -16,16 +16,20 @@ import android.widget.DatePicker
 import com.example.tkwest3774.navigationdrawer.Model.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.training_fragment.*
 import java.util.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, DatePickerDialog.OnDateSetListener {
     override fun onDateSet(view: DatePicker?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
         val str = String.format(Locale.US, "%d/%d/%d", year, monthOfYear+1, dayOfMonth)
-
+        dateSelected.text=str
     }
     fun showDatePickerDialog(v: View){
         val newFragment=DatePicker()
         newFragment.show(supportFragmentManager,"datepicker")
+    }
+    fun selectedDatePickerDialog(v:View){
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,8 +41,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-
-
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -86,23 +88,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_home-> {
                 // Handle the home action
                 fragment=HomeFragment()
+                setTitle("HOME")
             }
             R.id.nav_help-> {
                 fragment=HelpFragment()
+                this.setTitle("HELP")
             }
             R.id.nav_training -> {
                 // Handle the training action
                 fragment=TrainingFragment()
+                setTitle("TRAINING")
             }
             R.id.nav_schedule -> {
                 fragment=ScheduleFragment()
+                setTitle("SCHEDULE")
             }
             R.id.nav_share -> {
-
+                setTitle("SHARE")
             }
             R.id.nav_meal-> {
                 fragment=MealFragment()
-
+                setTitle("MEAL")
             }
         }
         //replace the fragment
@@ -116,7 +122,5 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    fun TrainingButtonClick(v:View){
-        val userInfo=User("","","","")
-    }
+
 }
