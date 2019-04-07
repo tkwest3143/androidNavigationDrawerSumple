@@ -1,0 +1,6 @@
+# androidNavigationDrawerSumple
+Sumpple of NavigationDrawer
+
+
+このアプリは、AndroidStudioで作成したアプリでNavigationDrawerを使って、サイドメニューを利用し、
+Fragmentで画面遷移を行うアプリケーションのサンプルです。
