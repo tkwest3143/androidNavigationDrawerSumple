@@ -116,7 +116,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val ft=supportFragmentManager.beginTransaction()
             ft.replace(R.id.contents,fragment)
             ft.commit()
-
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
